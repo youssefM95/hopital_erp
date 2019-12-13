@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hopital_patient,hopital_patient,model_hopital_patient,base.group_user,1,1,1,1
+access_hopital_medecin,hopital_medecin,model_hopital_medecin,base.group_user,1,1,1,1
+access_hopital_chambre,hopital_chambre,model_hopital_chambre,base.group_user,1,1,1,1
+access_hopital_saleoperatoire,hopital_saleoperatoire,model_hopital_saleoperatoire,base.group_user,1,1,1,1
+access_hopital_operationchirurgicale,hopital_operationchirurgicale,model_hopital_operationchirurgicale,base.group_user,1,1,1,1
+access_hopital_sejourmaladie,hopital_sejourmaladie,model_hopital_sejourmaladie,base.group_user,1,1,1,1
+access_hopital_specialite,hopital_specialite,model_hopital_specialite,base.group_user,1,1,1,1

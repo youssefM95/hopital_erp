@@ -1,0 +1,93 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <!--
+        <record model="ir.ui.view" id="hopital.list">
+          <field name="name">Hopital list</field>
+          <field name="model">hopital.hopital</field>
+          <field name="arch" type="xml">
+            <tree>
+              <field name="name"/>
+              <field name="value"/>
+              <field name="value2"/>
+            </tree>
+          </field>
+        </record>
+        -->
+        <record model="ir.ui.view" id="specialite_list_view">
+            <field name="name">Specialités list</field>
+            <field name="model">hopital.specialite</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+        <!--
+        <record model="ir.actions.act_window" id="hopital.action_window">
+          <field name="name">Hopital window</field>
+          <field name="res_model">hopital.hopital</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+        -->
+        <record model="ir.ui.view" id="specialite_form_view">
+            <field name="name">Specialite Form</field>
+            <field name="model">hopital.specialite</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <notebook>
+                        <page string="liste of medecins">
+                            <field name="medecin_ids"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!-- server action to the one above -->
+        <!--
+        <record model="ir.actions.server" id="hopital.action_server">
+          <field name="name">Hopital server</field>
+          <field name="model_id" ref="model_hopital_hopital"/>
+          <field name="state">code</field>
+          <field name="code">
+            action = {
+              "type": "ir.actions.act_window",
+              "view_mode": "tree,form",
+              "res_model": self._name,
+            }
+          </field>
+        </record>
+        -->
+        <record model="ir.actions.act_window" id="specialite_action_window">
+            <field name="name">Specialite window</field>
+            <field name="res_model">hopital.specialite</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- Top menu item -->
+        <!--
+        <menuitem name="Hopital" id="hopital.menu_root"/>
+        -->
+
+        <!-- menu categories -->
+        <!--
+        <menuitem name="Menu 1" id="hopital.menu_1" parent="hopital.menu_root"/>
+        <menuitem name="Menu 2" id="hopital.menu_2" parent="hopital.menu_root"/>
+        -->
+        <menuitem name="Specialité" id="hopital_specialite_cat"
+                  parent="hopital.menu_root"/>
+        <!-- actions -->
+        <!--
+        <menuitem name="List" id="hopital.menu_1_list" parent="hopital.menu_1"
+                  action="hopital.action_window"/>
+        <menuitem name="Server to list" id="hopital" parent="hopital.menu_2"
+                  action="hopital.action_server"/>
+        -->
+        <menuitem name="List of Specialités" id="specialite_medecin_list"
+                  parent="hopital_specialite_cat"
+                  action="specialite_action_window"/>
+    </data>
+</odoo>

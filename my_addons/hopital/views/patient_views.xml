@@ -1,0 +1,107 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <!--
+        <record model="ir.ui.view" id="hopital.list">
+          <field name="name">Hopital list</field>
+          <field name="model">hopital.hopital</field>
+          <field name="arch" type="xml">
+            <tree>
+              <field name="name"/>
+              <field name="value"/>
+              <field name="value2"/>
+            </tree>
+          </field>
+        </record>
+        -->
+        <record model="ir.ui.view" id="patient_list_view">
+            <field name="name">Patients list</field>
+            <field name="model">hopital.patient</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="f_name"/>
+                    <field name="l_name"/>
+                    <field name="gender"/>
+                    <field name="identity_card"/>
+                    <field name="birthday"/>
+                    <field name="situation_familliale"/>
+                </tree>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+        <!--
+        <record model="ir.actions.act_window" id="hopital.action_window">
+          <field name="name">Hopital window</field>
+          <field name="res_model">hopital.hopital</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+        -->
+        <record model="ir.ui.view" id="patient_form_view">
+            <field name="name">Patient Form</field>
+            <field name="model">hopital.patient</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="f_name"/>
+                        <field name="l_name"/>
+                        <field name="gender"/>
+                        <field name="identity_card"/>
+                        <field name="address"/>
+                        <field name="birthday"/>
+                        <field name="situation_familliale"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                    </group>
+
+                    <notebook>
+                        <page string="liste of operations">
+                            <field name="operation_ids"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!-- server action to the one above -->
+        <!--
+        <record model="ir.actions.server" id="hopital.action_server">
+          <field name="name">Hopital server</field>
+          <field name="model_id" ref="model_hopital_hopital"/>
+          <field name="state">code</field>
+          <field name="code">
+            action = {
+              "type": "ir.actions.act_window",
+              "view_mode": "tree,form",
+              "res_model": self._name,
+            }
+          </field>
+        </record>
+        -->
+        <record model="ir.actions.act_window" id="patient_action_window">
+            <field name="name">patient window</field>
+            <field name="res_model">hopital.patient</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- Top menu item -->
+        <!--
+        <menuitem name="Hopital" id="hopital.menu_root"/>
+        -->
+        <menuitem name="Hopital" id="hopital.menu_root"/>
+        <!-- menu categories -->
+        <!--
+        <menuitem name="Menu 1" id="hopital.menu_1" parent="hopital.menu_root"/>
+        <menuitem name="Menu 2" id="hopital.menu_2" parent="hopital.menu_root"/>
+        -->
+        <menuitem name="Patients" id="hopital_patient_cat"
+                  parent="hopital.menu_root"/>
+        <!-- actions -->
+        <!--
+        <menuitem name="List" id="hopital.menu_1_list" parent="hopital.menu_1"
+                  action="hopital.action_window"/>
+        <menuitem name="Server to list" id="hopital" parent="hopital.menu_2"
+                  action="hopital.action_server"/>
+        -->
+        <menuitem name="List of Patients" id="hopital_patient_list"
+                  parent="hopital_patient_cat"
+                  action="patient_action_window"/>
+    </data>
+</odoo>
