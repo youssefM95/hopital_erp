@@ -42,18 +42,26 @@
             <field name="arch" type="xml">
                 <form>
                     <group>
-                        <field name="f_name"/>
-                        <field name="l_name"/>
-                        <field name="gender"/>
-                        <field name="date_entre"/>
-                        <field name="prix_heure_operation"/>
-                        <field name="phone"/>
-                        <field name="specialite_id"/>
+                        <group>
+                            <field name="f_name"/>
+                            <field name="l_name"/>
+                            <field name="gender"/>
+                            <field name="date_entre"/>
+                            <field name="prix_heure_operation"/>
+                            <field name="phone"/>
+                            <field name="specialite_id"/>
+                        </group>
+                        <group>
+                            <field name="prix_op"/>
+                        </group>
                     </group>
-
                     <notebook>
                         <page string="liste of operations">
                             <field name="operation_ids"/>
+                        </page>
+
+                        <page string="liste of sejour">
+                            <field name="sejours_ids"/>
                         </page>
                     </notebook>
                 </form>

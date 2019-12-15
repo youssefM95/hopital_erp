@@ -42,20 +42,27 @@
             <field name="arch" type="xml">
                 <form>
                     <group>
-                        <field name="f_name"/>
-                        <field name="l_name"/>
-                        <field name="gender"/>
-                        <field name="identity_card"/>
-                        <field name="address"/>
-                        <field name="birthday"/>
-                        <field name="situation_familliale"/>
-                        <field name="email"/>
-                        <field name="phone"/>
+                        <group>
+                            <field name="f_name"/>
+                            <field name="l_name"/>
+                            <field name="gender"/>
+                            <field name="identity_card"/>
+                            <field name="address"/>
+                            <field name="birthday"/>
+                            <field name="situation_familliale"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                        </group>
+                        <group>
+                            <field name="prix_sejour"></field>
+                        </group>
                     </group>
-
                     <notebook>
                         <page string="liste of operations">
                             <field name="operation_ids"/>
+                        </page>
+                        <page string="liste of sejours">
+                            <field name="sejours_ids"/>
                         </page>
                     </notebook>
                 </form>
